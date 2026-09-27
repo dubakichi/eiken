@@ -1,6 +1,6 @@
-import Sentence from '../components/Sentence'
-import { speakLines } from '../lib/speech'
-import { TAG_LABELS, type Settings } from '../types'
+import { Explanation, Prompt } from '../components/QuizItemView'
+import { speakItem, tagLabels } from '../lib/quizItem'
+import type { Settings } from '../types'
 import type { AnswerResult } from './Quiz'
 
 interface Props {
@@ -44,22 +44,21 @@ export default function Result({ results, settings, onRetry, onHome }: Props) {
           {mistakes.map(({ question, chosen }) => (
             <div key={question.id} className="review-item">
               <div className="review-tags">
-                {question.tags.map((t) => (
-                  <span key={t} className="tag">
-                    {TAG_LABELS[t]}
+                {tagLabels(question).map((label) => (
+                  <span key={label} className="tag">
+                    {label}
                   </span>
                 ))}
               </div>
-              <Sentence lines={question.lines} filled={question.answer} />
+              <Prompt item={question} answered />
               <p className="review-answer">
                 こたえ：<strong>{question.answer}</strong>
                 <span className="your-answer">（えらんだのは {chosen}）</span>
               </p>
-              <p className="feedback-ja">{question.ja}</p>
-              <p className="feedback-explanation">💡 {question.explanation}</p>
+              <Explanation item={question} />
               <button
                 className="speak-button small"
-                onClick={() => speakLines(question.lines, settings, question.answer)}
+                onClick={() => speakItem(question, settings, true)}
               >
                 🔊 きく
               </button>

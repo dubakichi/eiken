@@ -19,16 +19,16 @@ export function shuffle<T>(items: readonly T[], rng: () => number = Math.random)
  * practice: ①復習日が来た問題（覚えていない順）→ ②まだ解いていない問題 → ③残りを box の小さい順
  * weak: にがてノートの問題だけ（覚えていない順）
  */
-export function buildSession(
-  questions: readonly FillBlankQuestion[],
+export function buildSession<T extends { id: string }>(
+  questions: readonly T[],
   progress: Progress,
   today: string,
   mode: SessionMode,
   size: number = SESSION_SIZE,
   rng: () => number = Math.random,
-): FillBlankQuestion[] {
+): T[] {
   const { records } = progress
-  const byBox = (a: FillBlankQuestion, b: FillBlankQuestion) =>
+  const byBox = (a: T, b: T) =>
     records[a.id].box - records[b.id].box
 
   if (mode === 'weak') {
