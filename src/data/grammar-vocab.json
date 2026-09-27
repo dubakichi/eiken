@@ -8,7 +8,7 @@
     ],
     "choices": ["snack", "desk", "window", "song"],
     "answer": "snack",
-    "ja": "A: おなかすいた。おやつをたべてもいい、ママ？ B: いいよ。りんごをどうぞ。",
+    "ja": "A: おなかすいた。おやつを食べてもいい、ママ？ B: いいよ。りんごをどうぞ。",
     "explanation": "snack は「おやつ」。hungry（おなかがすいた）がヒント。"
   },
   {
@@ -17,7 +17,7 @@
     "lines": [{ "text": "Emma wants to be a ___. She wants to make food at a restaurant." }],
     "choices": ["cook", "dentist", "singer", "pilot"],
     "answer": "cook",
-    "ja": "エマはコックさんになりたい。レストランでりょうりをつくりたいのです。",
+    "ja": "エマはコックさんになりたい。レストランでりょうりを作りたいのです。",
     "explanation": "cook は「りょうりする」のほかに「コックさん」といういみもあるよ。"
   },
   {
@@ -29,8 +29,8 @@
     ],
     "choices": ["station", "library", "beach", "kitchen"],
     "answer": "station",
-    "ja": "A: でんしゃのきっぷはどこでかえるの？ B: えきだよ。",
-    "explanation": "station は「えき」。train（でんしゃ）とセットでおぼえよう。"
+    "ja": "A: 電車のきっぷはどこで買えるの？ B: えきだよ。",
+    "explanation": "station は「えき」。train（電車）とセットでおぼえよう。"
   },
   {
     "id": "gv004",
@@ -38,8 +38,8 @@
     "lines": [{ "text": "It's raining now. Please take your ___ with you." }],
     "choices": ["umbrella", "camera", "lunch", "ball"],
     "answer": "umbrella",
-    "ja": "いま、あめがふっているよ。かさをもっていってね。",
-    "explanation": "umbrella は「かさ」。raining（あめがふっている）がヒント。"
+    "ja": "今、雨がふっているよ。かさをもって行ってね。",
+    "explanation": "umbrella は「かさ」。raining（雨がふっている）がヒント。"
   },
   {
     "id": "gv005",
@@ -50,8 +50,8 @@
     ],
     "choices": ["subject", "color", "animal", "season"],
     "answer": "subject",
-    "ja": "A: いちばんすきなきょうかはなに？ B: りかがすき。",
-    "explanation": "subject は「きょうか」。science（りか）、math（さんすう）、English（えいご）など。"
+    "ja": "A: 一番すきな教科は何？ B: 理科がすき。",
+    "explanation": "subject は「教科」。science（理科）、math（算数）、English（えいご）など。"
   },
   {
     "id": "gv006",
@@ -59,8 +59,8 @@
     "lines": [{ "text": "We have a lot of snow in ___." }],
     "choices": ["winter", "summer", "July", "August"],
     "answer": "winter",
-    "ja": "ふゆには、ゆきがたくさんふります。",
-    "explanation": "winter は「ふゆ」。spring はる、summer なつ、fall あき。"
+    "ja": "冬には、雪がたくさんふります。",
+    "explanation": "winter は「冬」。spring 春、summer 夏、fall 秋。"
   },
   {
     "id": "gv007",
@@ -68,8 +68,8 @@
     "lines": [{ "text": "My grandfather lives in a small ___ near the mountains." }],
     "choices": ["town", "pencil", "minute", "word"],
     "answer": "town",
-    "ja": "おじいちゃんは、やまのちかくの小さなまちにすんでいます。",
-    "explanation": "town は「まち」。lives in（～にすんでいる）のあとには、ばしょがくるよ。"
+    "ja": "おじいちゃんは、山の近くの小さな町にすんでいます。",
+    "explanation": "town は「町」。lives in（～にすんでいる）のあとには、ばしょが来るよ。"
   },
   {
     "id": "gv008",
@@ -80,8 +80,8 @@
     ],
     "choices": ["weather", "number", "story", "letter"],
     "answer": "weather",
-    "ja": "A: きょうのてんきはどう？ B: はれていて、あたたかいよ。",
-    "explanation": "weather は「てんき」。sunny（はれ）、rainy（あめ）、cloudy（くもり）。"
+    "ja": "A: 今日の天気はどう？ B: 晴れていて、あたたかいよ。",
+    "explanation": "weather は「天気」。sunny（晴れ）、rainy（雨）、cloudy（くもり）。"
   },
   {
     "id": "gv009",
@@ -101,7 +101,7 @@
     "lines": [{ "text": "Please ___ your hands before lunch." }],
     "choices": ["wash", "sleep", "listen", "jump"],
     "answer": "wash",
-    "ja": "おひるごはんのまえに、手をあらってね。",
+    "ja": "お昼ごはんの前に、手をあらってね。",
     "explanation": "wash は「あらう」。wash the dishes なら「おさらをあらう」。"
   },
   {
@@ -113,8 +113,8 @@
     ],
     "choices": ["buy", "sit", "fly", "swim"],
     "answer": "buy",
-    "ja": "A: おみせにいってくるね。 B: ぎゅうにゅうをかってきてくれる？",
-    "explanation": "buy は「かう」。store（おみせ）がヒント。"
+    "ja": "A: お店に行ってくるね。 B: ぎゅうにゅうを買ってきてくれる？",
+    "explanation": "buy は「買う」。store（お店）がヒント。"
   },
   {
     "id": "gv012",
@@ -146,7 +146,7 @@
     ],
     "choices": ["wait", "cook", "draw", "read"],
     "answer": "wait",
-    "ja": "A: ここでバスをまとう。 B: うん。もうすぐくるよ。",
+    "ja": "A: ここでバスをまとう。 B: うん。もうすぐ来るよ。",
     "explanation": "wait for ～ で「～をまつ」。"
   },
   {
@@ -158,8 +158,8 @@
     ],
     "choices": ["remember", "climb", "borrow", "cook"],
     "answer": "remember",
-    "ja": "A: わたしのなまえ、おぼえてる？ B: うん。リサだよね。",
-    "explanation": "remember は「おぼえている・おもいだす」。はんたいは forget（わすれる）。"
+    "ja": "A: わたしの名前、おぼえてる？ B: うん。リサだよね。",
+    "explanation": "remember は「おぼえている・思い出す」。はんたいは forget（わすれる）。"
   },
   {
     "id": "gv016",
@@ -182,7 +182,7 @@
     ],
     "choices": ["busy", "round", "sweet", "long"],
     "answer": "busy",
-    "ja": "A: いま、いそがしい？ B: うん。しゅくだいがたくさんあるんだ。",
+    "ja": "A: 今、いそがしい？ B: うん。しゅくだいがたくさんあるんだ。",
     "explanation": "busy は「いそがしい」。はんたいは free（ひまな）。"
   },
   {
@@ -191,7 +191,7 @@
     "lines": [{ "text": "The soup is too ___. Wait a minute before you eat it." }],
     "choices": ["hot", "short", "quiet", "slow"],
     "answer": "hot",
-    "ja": "スープはあつすぎるよ。たべるまえに少しまってね。",
+    "ja": "スープはあつすぎるよ。食べる前に少しまってね。",
     "explanation": "too hot で「あつすぎる」。too は「～すぎる」。"
   },
   {
@@ -212,8 +212,8 @@
     ],
     "choices": ["great", "busy", "sick", "dark"],
     "answer": "great",
-    "ja": "A: えいがはどうだった？ B: すごくよかった。またみたいな。",
-    "explanation": "great は「すばらしい」。「またみたい」から、いいいみのことばをえらぼう。"
+    "ja": "A: えいがはどうだった？ B: すごくよかった。また見たいな。",
+    "explanation": "great は「すばらしい」。「また見たい」から、いいいみのことばをえらぼう。"
   },
   {
     "id": "gv021",
@@ -221,8 +221,8 @@
     "lines": [{ "text": "I ___ to the zoo with my family last Sunday." }],
     "choices": ["went", "go", "goes", "going"],
     "answer": "went",
-    "ja": "このまえの日曜日、かぞくとどうぶつえんにいきました。",
-    "explanation": "last Sunday（このまえの日曜日）はむかしのこと。go のむかしのかたちは went。"
+    "ja": "この前の日曜日、かぞくとどうぶつえんに行きました。",
+    "explanation": "last Sunday（この前の日曜日）はむかしのこと。go のむかしの形は went。"
   },
   {
     "id": "gv022",
@@ -230,7 +230,7 @@
     "lines": [{ "text": "Yesterday, Amy ___ a big cake for her mother's birthday." }],
     "choices": ["made", "make", "makes", "making"],
     "answer": "made",
-    "ja": "きのう、エイミーはおかあさんのたんじょうびに大きなケーキをつくりました。",
+    "ja": "きのう、エイミーはお母さんのたんじょうびに大きなケーキを作りました。",
     "explanation": "Yesterday（きのう）はむかしのこと。make → made。"
   },
   {
@@ -242,8 +242,8 @@
     ],
     "choices": ["ate", "eat", "eats", "eating"],
     "answer": "ate",
-    "ja": "A: あさごはんになにをたべたの？ B: パンとたまごをたべたよ。",
-    "explanation": "did できかれたら、むかしのかたちでこたえる。eat → ate。"
+    "ja": "A: 朝ごはんに何を食べたの？ B: パンとたまごを食べたよ。",
+    "explanation": "did で聞かれたら、むかしの形で答える。eat → ate。"
   },
   {
     "id": "gv024",
@@ -251,8 +251,8 @@
     "lines": [{ "text": "Tom ___ his bag at school yesterday, so he went back to get it." }],
     "choices": ["left", "leave", "leaves", "leaving"],
     "answer": "left",
-    "ja": "トムはきのう、がっこうにかばんをわすれてきたので、とりにもどりました。",
-    "explanation": "leave は「おいてくる・出発する」。むかしのかたちは left。"
+    "ja": "トムはきのう、学校にかばんをわすれてきたので、とりにもどりました。",
+    "explanation": "leave は「おいてくる・しゅっぱつする」。むかしの形は left。"
   },
   {
     "id": "gv025",
@@ -263,8 +263,8 @@
     ],
     "choices": ["Did", "Do", "Does", "Are"],
     "answer": "Did",
-    "ja": "A: きのうのよる、サッカーのしあいをみた？ B: うん。ワクワクしたよ。",
-    "explanation": "last night（きのうのよる）のことをきくときは Did ではじめる。"
+    "ja": "A: きのうの夜、サッカーのしあいを見た？ B: うん。ワクワクしたよ。",
+    "explanation": "last night（きのうの夜）のことを聞くときは Did ではじめる。"
   },
   {
     "id": "gv026",
@@ -272,8 +272,8 @@
     "lines": [{ "text": "We ___ very tired after the long walk yesterday." }],
     "choices": ["were", "are", "was", "be"],
     "answer": "were",
-    "ja": "きのう、ながくあるいたあと、わたしたちはとてもつかれていました。",
-    "explanation": "We（わたしたち）のむかしのかたちは were。I や he なら was。"
+    "ja": "きのう、長く歩いたあと、わたしたちはとてもつかれていました。",
+    "explanation": "We（わたしたち）のむかしの形は were。I や he なら was。"
   },
   {
     "id": "gv027",
@@ -281,8 +281,8 @@
     "lines": [{ "text": "My father ___ a new car two weeks ago." }],
     "choices": ["bought", "buy", "buys", "buying"],
     "answer": "bought",
-    "ja": "おとうさんは2しゅうかんまえに、あたらしいくるまをかいました。",
-    "explanation": "ago は「～まえ」。buy → bought。"
+    "ja": "お父さんは2週間前に、新しい車を買いました。",
+    "explanation": "ago は「～前」。buy → bought。"
   },
   {
     "id": "gv028",
@@ -290,7 +290,7 @@
     "lines": [{ "text": "Ken ___ his friend a birthday card last week." }],
     "choices": ["sent", "slept", "stood", "fell"],
     "answer": "sent",
-    "ja": "ケンはせんしゅう、ともだちにたんじょうびカードをおくりました。",
+    "ja": "ケンは先週、友だちにたんじょうびカードをおくりました。",
     "explanation": "send（おくる）→ sent。カードは「おくる」ものだね。"
   },
   {
@@ -311,8 +311,8 @@
     "lines": [{ "text": "Mt. Fuji is the ___ mountain in Japan." }],
     "choices": ["highest", "high", "higher", "more high"],
     "answer": "highest",
-    "ja": "ふじさんは日本でいちばん高い山です。",
-    "explanation": "the ＋ -est で「いちばん～」。high → highest。"
+    "ja": "ふじさんは日本で一番高い山です。",
+    "explanation": "the ＋ -est で「一番～」。high → highest。"
   },
   {
     "id": "gv031",
@@ -324,7 +324,7 @@
     "choices": ["larger", "large", "largest", "the largest"],
     "answer": "larger",
     "ja": "A: このかばんはわたしには小さすぎるな。 B: こっちはどう？あっちより大きいよ。",
-    "explanation": "than（～より）があったら -er のかたち。large → larger。"
+    "explanation": "than（～より）があったら -er の形。large → larger。"
   },
   {
     "id": "gv032",
@@ -332,7 +332,7 @@
     "lines": [{ "text": "Sam can run ___ than his brother." }],
     "choices": ["faster", "fast", "fastest", "the fastest"],
     "answer": "faster",
-    "ja": "サムはおにいさんよりはやくはしれます。",
+    "ja": "サムはお兄さんより早く走れます。",
     "explanation": "than があるので fast → faster。"
   },
   {
@@ -344,8 +344,8 @@
     ],
     "choices": ["best", "better", "good", "well"],
     "answer": "best",
-    "ja": "A: どのきせつがすき？ B: はるがいちばんすき。",
-    "explanation": "like ～ the best で「～がいちばんすき」。"
+    "ja": "A: どのきせつがすき？ B: 春が一番すき。",
+    "explanation": "like ～ the best で「～が一番すき」。"
   },
   {
     "id": "gv034",
@@ -354,7 +354,7 @@
     "choices": ["more", "most", "very", "too"],
     "answer": "more",
     "ja": "この本はあの本よりおもしろい。",
-    "explanation": "ながいことば（interesting など）は -er ではなく more をつける。"
+    "explanation": "長いことば（interesting など）は -er ではなく more をつける。"
   },
   {
     "id": "gv035",
@@ -366,7 +366,7 @@
     "choices": ["May", "Is", "Are", "Was"],
     "answer": "May",
     "ja": "A: けしゴムをつかってもいいですか？ B: どうぞ。",
-    "explanation": "May I ～? で「～してもいいですか？」。Can I ～? とおなじいみ。"
+    "explanation": "May I ～? で「～してもいいですか？」。Can I ～? と同じいみ。"
   },
   {
     "id": "gv036",
@@ -374,7 +374,7 @@
     "lines": [{ "text": "It's late. You ___ go to bed now." }],
     "choices": ["must", "are", "did", "were"],
     "answer": "must",
-    "ja": "もうおそいよ。いますぐねなくちゃだめ。",
+    "ja": "もうおそいよ。今すぐねなくちゃだめ。",
     "explanation": "must は「～しなければならない」。must のあとはうごきのことば（go）。"
   },
   {
@@ -407,7 +407,7 @@
     "lines": [{ "text": "Ms. Green ___ speak three languages." }],
     "choices": ["can", "is", "are", "very"],
     "answer": "can",
-    "ja": "グリーン先生は3つのことばをはなせます。",
+    "ja": "グリーン先生は3つのことばを話せます。",
     "explanation": "can は「～できる」。can のあとはうごきのことば（speak）。"
   },
   {
@@ -419,7 +419,7 @@
     ],
     "choices": ["Shall", "Does", "Is", "Was"],
     "answer": "Shall",
-    "ja": "A: おなかすいた。いまおひるごはんにしようか？ B: いいね。",
+    "ja": "A: おなかすいた。今お昼ごはんにしようか？ B: いいね。",
     "explanation": "Shall we ～? は「（いっしょに）～しようか？」。Let's ～ とにているよ。"
   },
   {
@@ -431,8 +431,8 @@
     ],
     "choices": ["do", "did", "does", "doing"],
     "answer": "do",
-    "ja": "A: こんしゅうまつはなにをするの？ B: おばさんのいえにいくよ。",
-    "explanation": "be going to のあとは、もとのかたち（do）。"
+    "ja": "A: こんしゅうまつは何をするの？ B: おばさんの家に行くよ。",
+    "explanation": "be going to のあとは、もとの形（do）。"
   },
   {
     "id": "gv042",
@@ -440,7 +440,7 @@
     "lines": [{ "text": "It ___ rain tomorrow, so take your umbrella." }],
     "choices": ["will", "is", "was", "does"],
     "answer": "will",
-    "ja": "あしたはあめがふるから、かさをもっていってね。",
+    "ja": "あしたは雨がふるから、かさをもって行ってね。",
     "explanation": "tomorrow（あした）はこれからのこと。will ＋ うごきのことば。"
   },
   {
@@ -449,7 +449,7 @@
     "lines": [{ "text": "My family ___ going to go camping next month." }],
     "choices": ["is", "are", "am", "be"],
     "answer": "is",
-    "ja": "わたしのかぞくは、らいげつキャンプにいくよていです。",
+    "ja": "わたしのかぞくは、来月キャンプに行くよていです。",
     "explanation": "My family はひとまとまりなので is。is going to で「～するよてい」。"
   },
   {
@@ -461,8 +461,8 @@
     ],
     "choices": ["will", "do", "am", "did"],
     "answer": "will",
-    "ja": "A: わたしのパーティーにきてくれる？ B: うん、いくよ。",
-    "explanation": "Will you ～? ときかれたら Yes, I will. / No, I won't. でこたえる。"
+    "ja": "A: わたしのパーティーに来てくれる？ B: うん、行くよ。",
+    "explanation": "Will you ～? と聞かれたら Yes, I will. / No, I won't. で答える。"
   },
   {
     "id": "gv045",
@@ -479,8 +479,8 @@
     "lines": [{ "text": "My brother enjoys ___ video games." }],
     "choices": ["playing", "play", "plays", "played"],
     "answer": "playing",
-    "ja": "おとうとはテレビゲームをするのをたのしんでいます。",
-    "explanation": "enjoy のあとは -ing のかたち。enjoy playing で「するのをたのしむ」。"
+    "ja": "弟はテレビゲームをするのを楽しんでいます。",
+    "explanation": "enjoy のあとは -ing の形。enjoy playing で「するのを楽しむ」。"
   },
   {
     "id": "gv047",
@@ -488,7 +488,7 @@
     "lines": [{ "text": "I went to the park ___ play tennis." }],
     "choices": ["to", "for", "at", "on"],
     "answer": "to",
-    "ja": "テニスをするために、こうえんにいきました。",
+    "ja": "テニスをするために、公園に行きました。",
     "explanation": "to ＋ うごきのことば で「～するために」。"
   },
   {
@@ -497,8 +497,8 @@
     "lines": [{ "text": "Please stop ___ and listen to me." }],
     "choices": ["talking", "talk", "talks", "talked"],
     "answer": "talking",
-    "ja": "おしゃべりをやめて、わたしのはなしをきいてね。",
-    "explanation": "stop のあとは -ing のかたち。stop talking で「はなすのをやめる」。"
+    "ja": "おしゃべりをやめて、わたしの話を聞いてね。",
+    "explanation": "stop のあとは -ing の形。stop talking で「話すのをやめる」。"
   },
   {
     "id": "gv049",
@@ -510,7 +510,7 @@
     "choices": ["How much", "How many", "How old", "How long"],
     "answer": "How much",
     "ja": "A: このTシャツはいくらですか？ B: 15ドルです。",
-    "explanation": "ねだんをきくときは How much。How many は「いくつ」。"
+    "explanation": "ねだんを聞くときは How much。How many は「いくつ」。"
   },
   {
     "id": "gv050",
@@ -521,8 +521,8 @@
     ],
     "choices": ["What time", "Where", "Who", "Whose"],
     "answer": "What time",
-    "ja": "A: がっこうはなんじにはじまるの？ B: 8じ30ぷんだよ。",
-    "explanation": "じこくをきくときは What time。At ～ でこたえる。"
+    "ja": "A: 学校は何時にはじまるの？ B: 8時30分だよ。",
+    "explanation": "じこくを聞くときは What time。At ～ で答える。"
   },
   {
     "id": "gv051",
@@ -545,8 +545,8 @@
     ],
     "choices": ["Why", "Who", "Which", "Whose"],
     "answer": "Why",
-    "ja": "A: どうしてがっこうにちこくしたの？ B: バスにのりおくれたからだよ。",
-    "explanation": "Why は「どうして」。Because ～（～だから）でこたえる。"
+    "ja": "A: どうして学校にちこくしたの？ B: バスにのりおくれたからだよ。",
+    "explanation": "Why は「どうして」。Because ～（～だから）で答える。"
   },
   {
     "id": "gv053",
@@ -557,7 +557,7 @@
     ],
     "choices": ["kind", "time", "day", "color"],
     "answer": "kind",
-    "ja": "A: どんなしゅるいのおんがくがすき？ B: ロックがすき。",
+    "ja": "A: どんなしゅるいの音楽がすき？ B: ロックがすき。",
     "explanation": "What kind of ～? で「どんなしゅるいの～？」。"
   },
   {
@@ -569,8 +569,8 @@
     ],
     "choices": ["How", "Who", "What", "Whose"],
     "answer": "How",
-    "ja": "A: がっこうにはどうやっていくの？ B: じてんしゃでいくよ。",
-    "explanation": "How は「どうやって」。by bike（じてんしゃで）、on foot（あるいて）。"
+    "ja": "A: 学校にはどうやって行くの？ B: じてんしゃで行くよ。",
+    "explanation": "How は「どうやって」。by bike（じてんしゃで）、on foot（歩いて）。"
   },
   {
     "id": "gv055",
@@ -581,8 +581,8 @@
     ],
     "choices": ["many", "much", "old", "long"],
     "answer": "many",
-    "ja": "A: きょうだい（おとこ）はなんにんいるの？ B: 2人だよ。",
-    "explanation": "かずをきくときは How many ＋ -s のことば。"
+    "ja": "A: 兄弟は何人いるの？ B: 2人だよ。",
+    "explanation": "数を聞くときは How many ＋ -s のことば。"
   },
   {
     "id": "gv056",
@@ -602,8 +602,8 @@
     "lines": [{ "text": "Jim got ___ at six o'clock this morning." }],
     "choices": ["up", "on", "in", "off"],
     "answer": "up",
-    "ja": "ジムはけさ6じにおきました。",
-    "explanation": "get up で「おきる」。got は get のむかしのかたち。"
+    "ja": "ジムはけさ6時におきました。",
+    "explanation": "get up で「おきる」。got は get のむかしの形。"
   },
   {
     "id": "gv058",
@@ -620,7 +620,7 @@
     "lines": [{ "text": "My mother is looking ___ her glasses. She can't find them." }],
     "choices": ["for", "at", "on", "up"],
     "answer": "for",
-    "ja": "おかあさんはめがねをさがしています。見つからないのです。",
+    "ja": "お母さんはめがねをさがしています。見つからないのです。",
     "explanation": "look for ～ で「～をさがす」。look at ～ は「～を見る」。"
   },
   {
@@ -629,8 +629,8 @@
     "lines": [{ "text": "We had a good ___ at the party." }],
     "choices": ["time", "job", "hour", "week"],
     "answer": "time",
-    "ja": "わたしたちはパーティーでたのしいじかんをすごしました。",
-    "explanation": "have a good time で「たのしくすごす」。"
+    "ja": "わたしたちはパーティーで楽しい時間をすごしました。",
+    "explanation": "have a good time で「楽しくすごす」。"
   },
   {
     "id": "gv061",
@@ -648,7 +648,7 @@
     "choices": ["are", "is", "be", "am"],
     "answer": "are",
     "ja": "テーブルの上にバナナが3本あります。",
-    "explanation": "There are ～ で「～がある」。2つ以上なら are、1つなら is。"
+    "explanation": "There are ～ で「～がある」。2つより多いときは are、1つなら is。"
   },
   {
     "id": "gv063",
@@ -659,7 +659,7 @@
     ],
     "choices": ["sounds", "speaks", "hears", "listens"],
     "answer": "sounds",
-    "ja": "A: あした、うみにいこうよ。 B: それはいいね！",
+    "ja": "A: あした、海に行こうよ。 B: それはいいね！",
     "explanation": "That sounds great! で「それはいいね！」。"
   },
   {
@@ -672,6 +672,6 @@
     "choices": ["minute", "clock", "month", "year"],
     "answer": "minute",
     "ja": "A: もしもし。ベンくんはいますか？ B: ちょっとまってね。よんでくるよ。",
-    "explanation": "Just a minute. は「ちょっとまって」。でんわでよくつかうよ。"
+    "explanation": "Just a minute. は「ちょっとまって」。電話でよくつかうよ。"
   }
 ]
