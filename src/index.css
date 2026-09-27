@@ -1,0 +1,492 @@
+:root {
+  --bg: #fdf8ef;
+  --card: #ffffff;
+  --text: #2b2b33;
+  --muted: #6b6b78;
+  --primary: #2f6fde;
+  --primary-dark: #1f55b3;
+  --secondary: #ff9f1c;
+  --good: #1f9d55;
+  --good-bg: #e6f6ec;
+  --bad: #d64545;
+  --bad-bg: #fdecec;
+  --border: #e6ded0;
+  --radius: 18px;
+
+  font-family: 'Hiragino Maru Gothic ProN', 'BIZ UDPGothic', 'Meiryo', system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* ---------- ボタン ---------- */
+
+.big-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+.big-button:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.big-button.primary {
+  background: var(--primary);
+}
+
+.big-button.secondary {
+  background: var(--secondary);
+}
+
+.big-button:disabled {
+  background: #c9c4ba;
+  box-shadow: none;
+}
+
+.big-button .sub {
+  font-size: 0.85rem;
+  font-weight: normal;
+  opacity: 0.85;
+}
+
+.text-button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  padding: 4px 8px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+}
+
+.chip.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.speak-button {
+  padding: 10px 20px;
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.speak-button.small {
+  padding: 4px 14px;
+  font-size: 0.9rem;
+}
+
+/* ---------- ホーム ---------- */
+
+.home h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin: 16px 0 28px;
+}
+
+.accent {
+  color: var(--primary);
+  font-size: 1.3em;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.stat {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 8px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-value small {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.menu {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.warning {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--bad-bg);
+  color: var(--bad);
+  font-size: 0.9rem;
+}
+
+/* ---------- もんだい ---------- */
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 14px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--good);
+  transition: width 0.3s;
+}
+
+.counter {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.instruction {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sentence {
+  font-size: 1.45rem;
+  line-height: 1.8;
+}
+
+.line {
+  margin: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.speaker {
+  font-weight: bold;
+  color: var(--muted);
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.blank {
+  display: inline-block;
+  min-width: 4.5em;
+  margin: 0 4px;
+  padding: 0 8px;
+  border-bottom: 3px solid var(--primary);
+  text-align: center;
+}
+
+.blank.filled {
+  color: var(--good);
+  font-weight: bold;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--text);
+  font-size: 1.3rem;
+  text-align: left;
+  transition: border-color 0.1s, transform 0.08s;
+}
+
+.choice:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.choice:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.choice-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.choice.correct {
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+
+.choice.wrong {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+}
+
+.choice:disabled:not(.correct):not(.wrong) {
+  opacity: 0.5;
+}
+
+.feedback {
+  margin-top: 20px;
+  padding: 18px 22px;
+  border-radius: var(--radius);
+}
+
+.feedback.good {
+  background: var(--good-bg);
+}
+
+.feedback.bad {
+  background: var(--bad-bg);
+}
+
+.feedback-mark {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.feedback.good .feedback-mark {
+  color: var(--good);
+}
+
+.feedback.bad .feedback-mark {
+  color: var(--bad);
+}
+
+.feedback-ja {
+  margin: 8px 0 4px;
+}
+
+.feedback-explanation {
+  margin: 4px 0 16px;
+  font-weight: bold;
+}
+
+/* ---------- けっか ---------- */
+
+.result {
+  text-align: center;
+}
+
+.result h2 {
+  margin: 8px 0 0;
+}
+
+.score {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.score small {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.stamps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.stamp.good {
+  background: var(--good-bg);
+  color: var(--good);
+}
+
+.stamp.bad {
+  background: var(--border);
+  color: var(--muted);
+}
+
+.result-message {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.review {
+  text-align: left;
+}
+
+.review h3 {
+  margin-bottom: 0;
+}
+
+.note {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.review-item {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+
+.review-item .sentence {
+  font-size: 1.15rem;
+}
+
+.review-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--muted);
+}
+
+.review-answer {
+  margin: 8px 0 0;
+}
+
+.your-answer {
+  margin-left: 8px;
+  color: var(--bad);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .choices {
+    grid-template-columns: 1fr;
+  }
+
+  .sentence {
+    font-size: 1.2rem;
+  }
+}
+
+.settings + .settings {
+  margin-top: 12px;
+}
+
+.settings select {
+  font: inherit;
+  max-width: 60%;
+  padding: 6px 10px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+}

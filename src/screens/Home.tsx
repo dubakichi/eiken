@@ -1,0 +1,134 @@
+import { useEffect, useState } from 'react'
+import { questions } from '../data'
+import { streakDays, toDateKey, weakIds } from '../lib/progress'
+import type { SessionMode } from '../lib/session'
+import { onVoicesChanged, speakLines, voiceNames } from '../lib/speech'
+import type { Progress, Settings } from '../types'
+
+interface Props {
+  progress: Progress
+  onStart: (mode: SessionMode) => void
+  onChangeSettings: (settings: Settings) => void
+}
+
+const RATES = [
+  { label: 'ゆっくり', value: 0.7 },
+  { label: 'ふつう', value: 0.85 },
+  { label: 'はやい', value: 1.0 },
+]
+
+export default function Home({ progress, onStart, onChangeSettings }: Props) {
+  const today = toDateKey(new Date())
+  const todayCount = progress.daily[today] ?? 0
+  const streak = streakDays(progress, today)
+  const weakCount = weakIds(progress).length
+  const learned = Object.values(progress.records).filter((r) => r.box >= 3).length
+
+  // 声のリストは少しおくれて読みこまれることがある
+  const [voices, setVoices] = useState(voiceNames)
+  const [voicesChecked, setVoicesChecked] = useState(false)
+  useEffect(() => {
+    const unsubscribe = onVoicesChanged(() => setVoices(voiceNames()))
+    const timer = setTimeout(() => setVoicesChecked(true), 1500)
+    return () => {
+      unsubscribe()
+      clearTimeout(timer)
+    }
+  }, [])
+
+  const tryVoice = (settings: Settings) =>
+    speakLines(
+      [
+        { speaker: 'A', text: 'Hello. How are you today?' },
+        { speaker: 'B', text: "I'm fine, thank you." },
+      ],
+      settings,
+    )
+
+  const changeVoice = (voiceName: string) => {
+    const settings = { ...progress.settings, voiceName: voiceName || undefined }
+    onChangeSettings(settings)
+    tryVoice(settings)
+  }
+
+  return (
+    <div className="home">
+      <h1>
+        えいけん<span className="accent">4</span>きゅう
+        <br />
+        れんしゅう
+      </h1>
+
+      <div className="stats">
+        <div className="stat">
+          <div className="stat-value">{todayCount}</div>
+          <div className="stat-label">きょう といた かず</div>
+        </div>
+        <div className="stat">
+          <div className="stat-value">{streak}</div>
+          <div className="stat-label">れんぞく にっすう</div>
+        </div>
+        <div className="stat">
+          <div className="stat-value">
+            {learned}
+            <small>/{questions.length}</small>
+          </div>
+          <div className="stat-label">おぼえた もんだい</div>
+        </div>
+      </div>
+
+      <div className="menu">
+        <button className="big-button primary" onClick={() => onStart('practice')}>
+          ✏️ れんしゅうする
+          <span className="sub">10もん</span>
+        </button>
+        <button
+          className="big-button secondary"
+          onClick={() => onStart('weak')}
+          disabled={weakCount === 0}
+        >
+          📒 にがてノート
+          <span className="sub">{weakCount === 0 ? 'いまは なし' : `${weakCount}もん`}</span>
+        </button>
+      </div>
+
+      <div className="settings">
+        <span>よみあげの はやさ：</span>
+        {RATES.map((r) => (
+          <button
+            key={r.value}
+            className={`chip ${progress.settings.rate === r.value ? 'active' : ''}`}
+            onClick={() => onChangeSettings({ ...progress.settings, rate: r.value })}
+          >
+            {r.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="settings">
+        <label htmlFor="voice">こえ：</label>
+        <select
+          id="voice"
+          value={progress.settings.voiceName ?? ''}
+          onChange={(e) => changeVoice(e.target.value)}
+        >
+          <option value="">おまかせ</option>
+          {voices.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
+          ))}
+        </select>
+        <button className="chip" onClick={() => tryVoice(progress.settings)}>
+          🔊 ためしにきく
+        </button>
+      </div>
+
+      {voicesChecked && voices.length === 0 && (
+        <p className="warning">
+          英語の読み上げ音声が見つかりませんでした。OSの設定で英語の音声を追加してください。
+        </p>
+      )}
+    </div>
+  )
+}
