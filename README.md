@@ -6,6 +6,7 @@
 
 ## いまできること（Phase 1）
 - 筆記1形式（語彙・文法の空所補充4択）を1回10問
+- 単語の4択を1回10問（英→日と日→英をまぜて出題。英→日は出題と同時に発音を読み上げ）
 - 英文の読み上げ（ブラウザ内蔵の音声。オフライン可）と速度切替
 - 間違えた問題を「にがてノート」に入れ、日をあけて再出題（Leitner 方式）
 - 学習記録（きょう解いた数・連続日数・覚えた問題数）はブラウザの localStorage に保存
@@ -26,7 +27,9 @@ main に push すると GitHub Actions が GitHub Pages にデプロイします
 （リポジトリの Settings → Pages → Source を「GitHub Actions」にしておく）。
 
 ## 問題の追加
-`src/data/grammar-vocab.json` に追記します。空所は `___`、`answer` は `choices` のどれかと同じ文字列にします。
+- 文の問題: `src/data/grammar-vocab.json` に追記します。空所は `___`、`answer` は `choices` のどれかと同じ文字列にします。
+- 単語: `src/data/words.json` に `{ "id", "en", "ja", "pos" }` を追記します（`pos` は noun / verb / adjective / adverb / past）。まちがいの選択肢は同じ品詞の単語から自動で選ばれます。英語と日本語はそれぞれほかの単語と重ならないようにします。
+
 `npm test` で形式チェックが走ります。
 
 問題はすべてオリジナルです。過去問の冊子はインターネット上への掲載が禁止されているため、本文をそのまま収録しないでください。

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { TAG_LABELS } from '../types'
+import { TAG_LABELS, WORD_POS_LABELS } from '../types'
 import { BLANK } from '../lib/speech'
-import { questions } from './index'
+import { questions, words } from './index'
 
 describe('問題データ', () => {
   it('id が重複していない', () => {
@@ -19,5 +19,21 @@ describe('問題データ', () => {
     for (const tag of q.tags) expect(TAG_LABELS).toHaveProperty(tag)
     expect(q.ja).not.toBe('')
     expect(q.explanation).not.toBe('')
+  })
+})
+
+describe('単語データ', () => {
+  it('id・英語・日本語が重複していない', () => {
+    for (const key of ['id', 'en', 'ja'] as const) {
+      const values = words.map((w) => w[key])
+      expect(new Set(values).size, key).toBe(values.length)
+    }
+  })
+
+  it('品詞が正しく、どの品詞も4択を作れるだけある', () => {
+    for (const w of words) expect(WORD_POS_LABELS).toHaveProperty(w.pos)
+    for (const pos of Object.keys(WORD_POS_LABELS)) {
+      expect(words.filter((w) => w.pos === pos).length, pos).toBeGreaterThanOrEqual(4)
+    }
   })
 })

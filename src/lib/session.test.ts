@@ -7,6 +7,7 @@ const TODAY = '2026-09-27'
 
 function q(id: string): FillBlankQuestion {
   return {
+    kind: 'fill-blank',
     id,
     tags: ['noun'],
     lines: [{ text: 'a ___' }],

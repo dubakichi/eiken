@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
-import { questions } from '../data'
+import { COURSE_SIZES, type Course } from '../lib/courses'
 import { streakDays, toDateKey, weakIds } from '../lib/progress'
-import type { SessionMode } from '../lib/session'
 import { onVoicesChanged, speakLines, voiceNames } from '../lib/speech'
 import type { Progress, Settings } from '../types'
 
 interface Props {
   progress: Progress
-  onStart: (mode: SessionMode) => void
+  onStart: (course: Course) => void
   onChangeSettings: (settings: Settings) => void
 }
 
@@ -71,17 +70,23 @@ export default function Home({ progress, onStart, onChangeSettings }: Props) {
         <div className="stat">
           <div className="stat-value">
             {learned}
-            <small>/{questions.length}</small>
+            <small>/{COURSE_SIZES.grammar + COURSE_SIZES.words}</small>
           </div>
           <div className="stat-label">おぼえた もんだい</div>
         </div>
       </div>
 
       <div className="menu">
-        <button className="big-button primary" onClick={() => onStart('practice')}>
-          ✏️ れんしゅうする
-          <span className="sub">10もん</span>
-        </button>
+        <div className="menu-row">
+          <button className="big-button primary" onClick={() => onStart('grammar')}>
+            ✏️ ぶんの もんだい
+            <span className="sub">10もん</span>
+          </button>
+          <button className="big-button words" onClick={() => onStart('words')}>
+            🔤 たんご
+            <span className="sub">10もん</span>
+          </button>
+        </div>
         <button
           className="big-button secondary"
           onClick={() => onStart('weak')}

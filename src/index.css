@@ -490,3 +490,50 @@ button:disabled {
   background: var(--card);
   color: var(--text);
 }
+
+/* ---------- たんご ---------- */
+
+.menu-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.big-button.words {
+  background: var(--good);
+}
+
+.word-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 0;
+}
+
+.word-en {
+  font-size: 2.6rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.word-ja {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.word-pair {
+  font-size: 1.3rem;
+  color: var(--good);
+  font-weight: bold;
+}
+
+.review-item .word-en,
+.review-item .word-ja {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 520px) {
+  .menu-row {
+    grid-template-columns: 1fr;
+  }
+}

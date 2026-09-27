@@ -1,17 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import Sentence from '../components/Sentence'
+import { Explanation, Prompt } from '../components/QuizItemView'
+import { canSpeak, instruction, speakItem } from '../lib/quizItem'
 import { playCorrect, playWrong } from '../lib/sound'
-import { speakLines, stopSpeaking } from '../lib/speech'
-import type { FillBlankQuestion, Settings } from '../types'
+import { stopSpeaking } from '../lib/speech'
+import type { QuizItem, Settings } from '../types'
 
 export interface AnswerResult {
-  question: FillBlankQuestion
+  question: QuizItem
   chosen: string
   correct: boolean
 }
 
 interface Props {
-  items: FillBlankQuestion[]
+  items: QuizItem[]
   settings: Settings
   onAnswer: (questionId: string, correct: boolean) => void
   onFinish: (results: AnswerResult[]) => void
@@ -36,11 +37,8 @@ export default function Quiz({ items, settings, onAnswer, onFinish, onQuit }: Pr
       onAnswer(question.id, correct)
       if (correct) playCorrect()
       else playWrong()
-      // 効果音のあとに、正しい文を読み上げる
-      speakTimer.current = setTimeout(
-        () => speakLines(question.lines, settings, question.answer),
-        600,
-      )
+      // 効果音のあとに、正しい英語を読み上げる
+      speakTimer.current = setTimeout(() => speakItem(question, settings, true), 600)
     },
     [answered, question, settings, onAnswer],
   )
@@ -57,12 +55,21 @@ export default function Quiz({ items, settings, onAnswer, onFinish, onQuit }: Pr
   }, [index, items.length, results, onFinish])
 
   const speak = useCallback(
-    () => speakLines(question.lines, settings, answered ? question.answer : undefined),
+    () => speakItem(question, settings, answered),
     [question, settings, answered],
   )
 
-  // キーボード: 1〜4 でこたえる、スペースでよみあげ、Enter でつぎへ
   useEffect(() => () => clearTimeout(speakTimer.current), [])
+
+  // 英→日の単語問題は、出題と同時に発音を聞かせる
+  useEffect(() => {
+    if (question?.kind === 'word' && question.direction === 'en-ja') {
+      speakItem(question, settings, false)
+    }
+    // settings はクイズ中に変わらないので、実際には問題が変わったときだけ読む
+  }, [question, settings])
+
+  // キーボード: 1〜4 でこたえる、スペースでよみあげ、Enter でつぎへ
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -112,13 +119,15 @@ export default function Quiz({ items, settings, onAnswer, onFinish, onQuit }: Pr
         </span>
       </header>
 
-      <p className="instruction">（　）に はいる ことばを えらぼう</p>
+      <p className="instruction">{instruction(question)}</p>
 
       <div className="card">
-        <Sentence lines={question.lines} filled={answered ? question.answer : undefined} />
-        <button className="speak-button" onClick={speak} title="よみあげ（スペースキー）">
-          🔊 きく
-        </button>
+        <Prompt item={question} answered={answered} />
+        {canSpeak(question, answered) && (
+          <button className="speak-button" onClick={speak} title="よみあげ（スペースキー）">
+            🔊 きく
+          </button>
+        )}
       </div>
 
       <div className="choices">
@@ -143,8 +152,7 @@ export default function Quiz({ items, settings, onAnswer, onFinish, onQuit }: Pr
       {answered && (
         <div className={`feedback ${isCorrect ? 'good' : 'bad'}`}>
           <div className="feedback-mark">{isCorrect ? '⭕ せいかい！' : '❌ ざんねん'}</div>
-          <p className="feedback-ja">{question.ja}</p>
-          <p className="feedback-explanation">💡 {question.explanation}</p>
+          <Explanation item={question} />
           <button className="big-button primary" onClick={next} autoFocus>
             {index + 1 >= items.length ? 'けっかを見る' : 'つぎへ'} <span className="sub">Enter</span>
           </button>

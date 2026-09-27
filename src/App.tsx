@@ -1,17 +1,19 @@
 import { useState } from 'react'
-import { questions } from './data'
+import { words } from './data'
+import { poolFor, sessionMode, type Course } from './lib/courses'
 import { loadProgress, recordAnswer, saveProgress, toDateKey } from './lib/progress'
-import { buildSession, withShuffledChoices, type SessionMode } from './lib/session'
+import { toQuizItem } from './lib/quizItem'
+import { buildSession } from './lib/session'
 import { stopSpeaking } from './lib/speech'
 import Home from './screens/Home'
 import Quiz, { type AnswerResult } from './screens/Quiz'
 import Result from './screens/Result'
-import type { FillBlankQuestion, Progress, Settings } from './types'
+import type { Progress, QuizItem, Settings } from './types'
 
 type Screen =
   | { name: 'home' }
-  | { name: 'quiz'; mode: SessionMode; items: FillBlankQuestion[] }
-  | { name: 'result'; mode: SessionMode; results: AnswerResult[] }
+  | { name: 'quiz'; course: Course; items: QuizItem[] }
+  | { name: 'result'; course: Course; results: AnswerResult[] }
 
 export default function App() {
   const [progress, setProgress] = useState<Progress>(loadProgress)
@@ -22,9 +24,10 @@ export default function App() {
     saveProgress(next)
   }
 
-  const start = (mode: SessionMode) => {
-    const items = buildSession(questions, progress, toDateKey(new Date()), mode)
-    setScreen({ name: 'quiz', mode, items: items.map((q) => withShuffledChoices(q)) })
+  const start = (course: Course) => {
+    const today = toDateKey(new Date())
+    const picked = buildSession(poolFor(course), progress, today, sessionMode(course))
+    setScreen({ name: 'quiz', course, items: picked.map((item) => toQuizItem(item, words)) })
   }
 
   const goHome = () => {
@@ -49,7 +52,7 @@ export default function App() {
           items={screen.items}
           settings={progress.settings}
           onAnswer={handleAnswer}
-          onFinish={(results) => setScreen({ name: 'result', mode: screen.mode, results })}
+          onFinish={(results) => setScreen({ name: 'result', course: screen.course, results })}
           onQuit={goHome}
         />
       )}
@@ -57,7 +60,7 @@ export default function App() {
         <Result
           results={screen.results}
           settings={progress.settings}
-          onRetry={() => start(screen.mode)}
+          onRetry={() => start(screen.course)}
           onHome={goHome}
         />
       )}
