@@ -107,34 +107,38 @@ export default function Home({ progress, onStart, onChangeSettings, onShowAbout 
 
       <div className="settings">
         <span>読み上げの はやさ：</span>
-        {RATES.map((r) => (
-          <button
-            key={r.value}
-            className={`chip ${progress.settings.rate === r.value ? 'active' : ''}`}
-            onClick={() => onChangeSettings({ ...progress.settings, rate: r.value })}
-          >
-            {r.label}
-          </button>
-        ))}
+        <div className="settings-controls">
+          {RATES.map((r) => (
+            <button
+              key={r.value}
+              className={`chip ${progress.settings.rate === r.value ? 'active' : ''}`}
+              onClick={() => onChangeSettings({ ...progress.settings, rate: r.value })}
+            >
+              {r.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="settings">
         <label htmlFor="voice">声：</label>
-        <select
-          id="voice"
-          value={progress.settings.voiceName ?? ''}
-          onChange={(e) => changeVoice(e.target.value)}
-        >
-          <option value="">おまかせ</option>
-          {voices.map((name) => (
-            <option key={name} value={name}>
-              {name}
-            </option>
-          ))}
-        </select>
-        <button className="chip" onClick={() => tryVoice(progress.settings)}>
-          🔊 ためしに 聞く
-        </button>
+        <div className="settings-controls">
+          <select
+            id="voice"
+            value={progress.settings.voiceName ?? ''}
+            onChange={(e) => changeVoice(e.target.value)}
+          >
+            <option value="">おまかせ</option>
+            {voices.map((name) => (
+              <option key={name} value={name}>
+                {name}
+              </option>
+            ))}
+          </select>
+          <button className="chip" onClick={() => tryVoice(progress.settings)}>
+            🔊 ためしに 聞く
+          </button>
+        </div>
       </div>
 
       {voicesChecked && voices.length === 0 && (

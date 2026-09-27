@@ -96,6 +96,7 @@ button:disabled {
 
 .chip {
   padding: 6px 14px;
+  white-space: nowrap;
   border: 2px solid var(--border);
   border-radius: 999px;
   background: var(--card);
@@ -481,9 +482,20 @@ button:disabled {
   margin-top: 12px;
 }
 
+/* ボタンはひとまとまりで折り返す。幅が足りないときは「見出しの行」と「ボタンの行」に分かれる */
+.settings-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+}
+
 .settings select {
   font: inherit;
-  max-width: 60%;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 16rem;
   padding: 6px 10px;
   border: 2px solid var(--border);
   border-radius: 12px;
