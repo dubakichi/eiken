@@ -40,7 +40,7 @@ export default function Result({ results, settings, onRetry, onHome }: Props) {
       {mistakes.length > 0 && (
         <section className="review">
           <h3>まちがえた もんだい</h3>
-          <p className="note">にがてノートに いれたよ。あした また でるよ。</p>
+          <p className="note">にがてノートに 入れたよ。あした また 出るよ。</p>
           {mistakes.map(({ question, chosen }) => (
             <div key={question.id} className="review-item">
               <div className="review-tags">
@@ -52,7 +52,7 @@ export default function Result({ results, settings, onRetry, onHome }: Props) {
               </div>
               <Prompt item={question} answered />
               <p className="review-answer">
-                こたえ：<strong>{question.answer}</strong>
+                答え：<strong>{question.answer}</strong>
                 <span className="your-answer">（えらんだのは {chosen}）</span>
               </p>
               <Explanation item={question} />
@@ -60,7 +60,7 @@ export default function Result({ results, settings, onRetry, onHome }: Props) {
                 className="speak-button small"
                 onClick={() => speakItem(question, settings, true)}
               >
-                🔊 きく
+                🔊 聞く
               </button>
             </div>
           ))}

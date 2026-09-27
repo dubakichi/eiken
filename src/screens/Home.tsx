@@ -62,11 +62,11 @@ export default function Home({ progress, onStart, onChangeSettings, onShowAbout 
       <div className="stats">
         <div className="stat">
           <div className="stat-value">{todayCount}</div>
-          <div className="stat-label">きょう といた かず</div>
+          <div className="stat-label">今日 といた 数</div>
         </div>
         <div className="stat">
           <div className="stat-value">{streak}</div>
-          <div className="stat-label">れんぞく にっすう</div>
+          <div className="stat-label">れんぞく 日数</div>
         </div>
         <div className="stat">
           <div className="stat-value">
@@ -78,7 +78,7 @@ export default function Home({ progress, onStart, onChangeSettings, onShowAbout 
       </div>
 
       <p className="stats-caption">
-        💡 おなじ もんだいに <strong>2かい れんぞくで せいかい</strong>すると「おぼえた」に なるよ。
+        💡 同じ もんだいに <strong>2回 れんぞくで せいかい</strong>すると「おぼえた」に なるよ。
         <button className="text-button" onClick={onShowAbout}>
           もっと くわしく ？
         </button>
@@ -87,7 +87,7 @@ export default function Home({ progress, onStart, onChangeSettings, onShowAbout 
       <div className="menu">
         <div className="menu-row">
           <button className="big-button primary" onClick={() => onStart('grammar')}>
-            ✏️ ぶんの もんだい
+            ✏️ 文の もんだい
             <span className="sub">10もん</span>
           </button>
           <button className="big-button words" onClick={() => onStart('words')}>
@@ -101,12 +101,12 @@ export default function Home({ progress, onStart, onChangeSettings, onShowAbout 
           disabled={weakCount === 0}
         >
           📒 にがてノート
-          <span className="sub">{weakCount === 0 ? 'いまは なし' : `${weakCount}もん`}</span>
+          <span className="sub">{weakCount === 0 ? '今は なし' : `${weakCount}もん`}</span>
         </button>
       </div>
 
       <div className="settings">
-        <span>よみあげの はやさ：</span>
+        <span>読み上げの はやさ：</span>
         {RATES.map((r) => (
           <button
             key={r.value}
@@ -119,7 +119,7 @@ export default function Home({ progress, onStart, onChangeSettings, onShowAbout 
       </div>
 
       <div className="settings">
-        <label htmlFor="voice">こえ：</label>
+        <label htmlFor="voice">声：</label>
         <select
           id="voice"
           value={progress.settings.voiceName ?? ''}
@@ -133,7 +133,7 @@ export default function Home({ progress, onStart, onChangeSettings, onShowAbout 
           ))}
         </select>
         <button className="chip" onClick={() => tryVoice(progress.settings)}>
-          🔊 ためしにきく
+          🔊 ためしに 聞く
         </button>
       </div>
 

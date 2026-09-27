@@ -40,17 +40,17 @@ export const TAG_LABELS: Record<Tag, string> = {
   future: 'これからのこと（みらい）',
   infinitive: 'to ～ / ～ing',
   'question-word': 'ぎもんし（What / How など）',
-  idiom: 'きまったいいかた',
+  idiom: 'きまった言い方',
 }
 
 export type WordPos = 'noun' | 'verb' | 'adjective' | 'adverb' | 'past'
 
 export const WORD_POS_LABELS: Record<WordPos, string> = {
-  noun: 'たんご（もの・ばしょ・ひと）',
+  noun: 'たんご（もの・ばしょ・人）',
   verb: 'たんご（うごき）',
   adjective: 'たんご（ようす）',
   adverb: 'たんご（いつ・どのくらい）',
-  past: 'むかしのかたち（かこけい）',
+  past: 'むかしの形（かこけい）',
 }
 
 export interface Word {

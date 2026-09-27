@@ -14,7 +14,7 @@ export function toQuizItem(
 }
 
 export function instruction(item: QuizItem): string {
-  if (item.kind === 'fill-blank') return '（　）に はいる ことばを えらぼう'
+  if (item.kind === 'fill-blank') return '（　）に 入る ことばを えらぼう'
   return item.direction === 'en-ja' ? 'いみを えらぼう' : 'えいごを えらぼう'
 }
 

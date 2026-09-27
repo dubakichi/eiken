@@ -124,8 +124,8 @@ export default function Quiz({ items, settings, onAnswer, onFinish, onQuit }: Pr
       <div className="card">
         <Prompt item={question} answered={answered} />
         {canSpeak(question, answered) && (
-          <button className="speak-button" onClick={speak} title="よみあげ（スペースキー）">
-            🔊 きく
+          <button className="speak-button" onClick={speak} title="読み上げ（スペースキー）">
+            🔊 聞く
           </button>
         )}
       </div>
