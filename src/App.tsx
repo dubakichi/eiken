@@ -5,6 +5,7 @@ import { loadProgress, recordAnswer, saveProgress, toDateKey } from './lib/progr
 import { toQuizItem } from './lib/quizItem'
 import { buildSession } from './lib/session'
 import { stopSpeaking } from './lib/speech'
+import About from './screens/About'
 import Home from './screens/Home'
 import Quiz, { type AnswerResult } from './screens/Quiz'
 import Result from './screens/Result'
@@ -12,6 +13,7 @@ import type { Progress, QuizItem, Settings } from './types'
 
 type Screen =
   | { name: 'home' }
+  | { name: 'about' }
   | { name: 'quiz'; course: Course; items: QuizItem[] }
   | { name: 'result'; course: Course; results: AnswerResult[] }
 
@@ -44,8 +46,14 @@ export default function App() {
   return (
     <main className="app">
       {screen.name === 'home' && (
-        <Home progress={progress} onStart={start} onChangeSettings={changeSettings} />
+        <Home
+          progress={progress}
+          onStart={start}
+          onChangeSettings={changeSettings}
+          onShowAbout={() => setScreen({ name: 'about' })}
+        />
       )}
+      {screen.name === 'about' && <About onBack={goHome} />}
       {screen.name === 'quiz' && (
         <Quiz
           key={screen.items.map((q) => q.id).join()}

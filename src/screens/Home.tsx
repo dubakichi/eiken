@@ -8,6 +8,7 @@ interface Props {
   progress: Progress
   onStart: (course: Course) => void
   onChangeSettings: (settings: Settings) => void
+  onShowAbout: () => void
 }
 
 const RATES = [
@@ -16,7 +17,7 @@ const RATES = [
   { label: 'はやい', value: 1.0 },
 ]
 
-export default function Home({ progress, onStart, onChangeSettings }: Props) {
+export default function Home({ progress, onStart, onChangeSettings, onShowAbout }: Props) {
   const today = toDateKey(new Date())
   const todayCount = progress.daily[today] ?? 0
   const streak = streakDays(progress, today)
@@ -75,6 +76,13 @@ export default function Home({ progress, onStart, onChangeSettings }: Props) {
           <div className="stat-label">おぼえた もんだい</div>
         </div>
       </div>
+
+      <p className="stats-caption">
+        💡 おなじ もんだいに <strong>2かい れんぞくで せいかい</strong>すると「おぼえた」に なるよ。
+        <button className="text-button" onClick={onShowAbout}>
+          もっと くわしく ？
+        </button>
+      </p>
 
       <div className="menu">
         <div className="menu-row">

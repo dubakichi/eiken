@@ -532,8 +532,88 @@ button:disabled {
   font-size: 1.5rem;
 }
 
+.stats-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin: -8px 0 20px;
+  padding: 10px 14px;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.stats-caption strong {
+  color: var(--text);
+}
+
+.stats-caption .text-button {
+  padding: 0;
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 @media (max-width: 520px) {
   .menu-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- せつめいページ ---------- */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about h2 {
+  margin: 8px 0 4px;
+}
+
+.about-section {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin: 10px 0;
+}
+
+.about-section h3 {
+  margin-top: 0;
+}
+
+.about-section p {
+  line-height: 1.8;
+}
+
+.about-formula {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0;
+  padding: 14px 16px;
+  background: var(--bg);
+  border-radius: 12px;
+}
+
+.about-formula-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.about-formula-row.total {
+  font-weight: bold;
+  color: var(--primary);
+  border-top: 2px dashed var(--border);
+  padding-top: 8px;
+}
+
+.about .big-button {
+  margin-top: 12px;
 }
