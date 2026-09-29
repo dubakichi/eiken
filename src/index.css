@@ -528,6 +528,12 @@ button:disabled {
   letter-spacing: 0.02em;
 }
 
+.word-kana {
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: var(--muted);
+}
+
 .word-ja {
   font-size: 2rem;
   font-weight: bold;

@@ -56,6 +56,8 @@ export const WORD_POS_LABELS: Record<WordPos, string> = {
 export interface Word {
   id: string
   en: string
+  /** 英語の一般的なカタカナ読み（英語の下に小さく出す） */
+  kana: string
   ja: string
   pos: WordPos
   /** 答えたあとに出すひとこと（かこけいのもとの形など） */
