@@ -30,6 +30,10 @@ describe('単語データ', () => {
     }
   })
 
+  it('カタカナ読みがカタカナだけで書かれている', () => {
+    for (const w of words) expect(w.kana, w.en).toMatch(/^[ァ-ヶー]+( [ァ-ヶー]+)*$/)
+  })
+
   it('品詞が正しく、どの品詞も4択を作れるだけある', () => {
     for (const w of words) expect(WORD_POS_LABELS).toHaveProperty(w.pos)
     for (const pos of Object.keys(WORD_POS_LABELS)) {

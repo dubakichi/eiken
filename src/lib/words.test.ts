@@ -3,12 +3,12 @@ import type { Word } from '../types'
 import { makeWordQuestion, wordPrompts } from './words'
 
 const words: Word[] = [
-  { id: 'w1', en: 'station', ja: 'えき', pos: 'noun' },
-  { id: 'w2', en: 'library', ja: 'としょかん', pos: 'noun' },
-  { id: 'w3', en: 'bank', ja: 'ぎんこう', pos: 'noun' },
-  { id: 'w4', en: 'museum', ja: 'はくぶつかん', pos: 'noun' },
-  { id: 'w5', en: 'run', ja: 'はしる', pos: 'verb' },
-  { id: 'w6', en: 'swim', ja: 'およぐ', pos: 'verb' },
+  { id: 'w1', en: 'station', kana: 'ステーション', ja: 'えき', pos: 'noun' },
+  { id: 'w2', en: 'library', kana: 'ライブラリー', ja: 'としょかん', pos: 'noun' },
+  { id: 'w3', en: 'bank', kana: 'バンク', ja: 'ぎんこう', pos: 'noun' },
+  { id: 'w4', en: 'museum', kana: 'ミュージアム', ja: 'はくぶつかん', pos: 'noun' },
+  { id: 'w5', en: 'run', kana: 'ラン', ja: 'はしる', pos: 'verb' },
+  { id: 'w6', en: 'swim', kana: 'スイム', ja: 'およぐ', pos: 'verb' },
 ]
 
 describe('wordPrompts', () => {
