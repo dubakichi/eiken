@@ -1,16 +1,24 @@
 :root {
-  --bg: #fdf8ef;
+  /* 水色・むらさき・黄色を同じくらいの明るさと鮮やかさにそろえる */
+  --bg: #f4f1ff;
   --card: #ffffff;
-  --text: #2b2b33;
-  --muted: #6b6b78;
-  --primary: #2f6fde;
-  --primary-dark: #1f55b3;
-  --secondary: #ff9f1c;
-  --good: #1f9d55;
-  --good-bg: #e6f6ec;
-  --bad: #d64545;
-  --bad-bg: #fdecec;
-  --border: #e6ded0;
+  --text: #2e2a45;
+  --muted: #6d6889;
+  --primary: #8e5ee0;
+  --primary-dark: #7246c4;
+  --primary-light: #efe8fd;
+  --sky: #2fa6dc;
+  --sky-dark: #1c88bb;
+  --sky-light: #e3f4fc;
+  --yellow: #ffcd3c;
+  --yellow-dark: #e0a800;
+  --yellow-text: #5a4300;
+  --secondary: var(--yellow);
+  --good: #1f9d6b;
+  --good-bg: #e2f6ee;
+  --bad: #e0567a;
+  --bad-bg: #ffedf2;
+  --border: #ddd6f3;
   --radius: 18px;
 
   font-family: 'Hiragino Maru Gothic ProN', 'BIZ UDPGothic', 'Meiryo', system-ui, sans-serif;
@@ -27,7 +35,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--bg);
+  background: linear-gradient(160deg, #e6f5ff 0%, #f1ecff 50%, #fff7d9 100%) fixed;
+  background-color: var(--bg);
 }
 
 button {
@@ -59,25 +68,30 @@ button:disabled {
   font-size: 1.3rem;
   font-weight: bold;
   color: #fff;
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 0 var(--shadow, rgba(0, 0, 0, 0.15));
   transition: transform 0.08s, box-shadow 0.08s;
 }
 
 .big-button:active:not(:disabled) {
   transform: translateY(4px);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 0 var(--shadow, rgba(0, 0, 0, 0.15));
 }
 
 .big-button.primary {
+  --shadow: var(--primary-dark);
   background: var(--primary);
 }
 
+/* 黄色は白い字だと読みにくいので、こい茶色の字にする */
 .big-button.secondary {
+  --shadow: var(--yellow-dark);
   background: var(--secondary);
+  color: var(--yellow-text);
 }
 
 .big-button:disabled {
-  background: #c9c4ba;
+  background: #cfcae0;
+  color: #fff;
   box-shadow: none;
 }
 
@@ -135,6 +149,7 @@ button:disabled {
 .accent {
   color: var(--primary);
   font-size: 1.3em;
+  text-shadow: 3px 3px 0 var(--yellow);
 }
 
 .stats {
@@ -155,7 +170,7 @@ button:disabled {
 .stat-value {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--primary);
+  color: var(--sky-dark);
   font-variant-numeric: tabular-nums;
 }
 
@@ -213,7 +228,7 @@ button:disabled {
 
 .progress-fill {
   height: 100%;
-  background: var(--good);
+  background: linear-gradient(90deg, var(--sky), var(--primary));
   transition: width 0.3s;
 }
 
@@ -292,7 +307,8 @@ button:disabled {
 }
 
 .choice:hover:not(:disabled) {
-  border-color: var(--primary);
+  border-color: var(--sky);
+  background: var(--sky-light);
 }
 
 .choice:active:not(:disabled) {
@@ -307,8 +323,8 @@ button:disabled {
   height: 32px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--bg);
-  color: var(--muted);
+  background: var(--primary-light);
+  color: var(--primary);
   font-size: 1rem;
   font-weight: bold;
 }
@@ -454,8 +470,8 @@ button:disabled {
   font-size: 0.75rem;
   padding: 2px 10px;
   border-radius: 999px;
-  background: var(--bg);
-  color: var(--muted);
+  background: var(--sky-light);
+  color: var(--sky-dark);
 }
 
 .review-answer {
@@ -512,7 +528,8 @@ button:disabled {
 }
 
 .big-button.words {
-  background: var(--good);
+  --shadow: var(--sky-dark);
+  background: var(--sky);
 }
 
 .word-prompt {
@@ -541,7 +558,7 @@ button:disabled {
 
 .word-pair {
   font-size: 1.3rem;
-  color: var(--good);
+  color: var(--primary);
   font-weight: bold;
 }
 
@@ -614,7 +631,7 @@ button:disabled {
   gap: 8px;
   margin: 14px 0;
   padding: 14px 16px;
-  background: var(--bg);
+  background: var(--primary-light);
   border-radius: 12px;
 }
 

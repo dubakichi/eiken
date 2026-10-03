@@ -16,8 +16,8 @@ export default defineConfig({
         short_name: 'えいけん4きゅう',
         description: '英検4級合格をめざす小学生向けの練習アプリ',
         lang: 'ja',
-        theme_color: '#2f6fde',
-        background_color: '#fdf8ef',
+        theme_color: '#8e5ee0',
+        background_color: '#f4f1ff',
         display: 'standalone',
         icons: [
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
